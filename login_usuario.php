@@ -1,5 +1,4 @@
 <?php
-// Datos de conexión
 $serverName = "ALEJANDRO\\SQLEXPRESS";
 $connectionInfo = array(
     "Database" => "PapeliStudio",
@@ -7,14 +6,12 @@ $connectionInfo = array(
     "PWD" => ""
 );
 
-// Conexión con SQL Server
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 if (!$conn) {
     die("❌ Error de conexión: " . print_r(sqlsrv_errors(), true));
 }
 
-// Verificar si se enviaron datos desde el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $email = trim($_POST["correo"]);
@@ -39,7 +36,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
             $_SESSION["usuario"] = $nombre;
             $_SESSION["email"] = $email;
 
-            echo "<script>alert('✅ Bienvenido, $nombre'); window.location.href='index.html';</script>";
+            echo "<script>alert('✅ Bienvenido, $nombre'); window.location.href='index.php';</script>";
         } else {
             echo "<script>alert('❌ Contraseña incorrecta'); window.location.href='Login.html';</script>";
         }

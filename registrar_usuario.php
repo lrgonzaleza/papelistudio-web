@@ -7,14 +7,12 @@ $connectionInfo = array(
     "PWD" => ""
 );
 
-// Conexión con SQL Server
 $conn = sqlsrv_connect($serverName, $connectionInfo);
 
 if (!$conn) {
     die("❌ Error de conexión: " . print_r(sqlsrv_errors(), true));
 }
 
-// Verificar si se enviaron datos desde el formulario
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     // Capturar datos del formulario
@@ -43,6 +41,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     }
 }
 
-// Cerrar conexión
 sqlsrv_close($conn);
 ?>
