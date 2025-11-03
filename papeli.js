@@ -10,7 +10,11 @@ hamburger.addEventListener('click', () => {
 });
 
 // Set current year in footer
-document.getElementById('year').textContent = new Date().getFullYear();
+const yearEl = document.getElementById('year');
+if (yearEl) {
+  yearEl.textContent = new Date().getFullYear();
+}
+
 
 // Inicializar Swiper (carrusel moderno y táctil)
 const swiper = new Swiper('.mySwiper', {
@@ -70,4 +74,3 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     }
   });
 });
-

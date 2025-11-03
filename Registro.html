@@ -21,68 +21,72 @@
 <body>
     <!-- NAV -->
     <header class="header">
-    <div class="container nav-wrap">
-        <div class="brand">
-        <img src="FOTO DE PERFIL.jpg" alt="Papeli Studio logo" class="logo"/>
-        <div class="brand-text">
-            <span class="brand-name">Papeli<span class="brand-accent">Studio</span></span>
-            <small class="brand-sub">Papelería Creativa y Corporativa</small>
-        </div>
-        </div>
-        <nav class="nav" id="nav">
-        <ul>
-            <li><a href="#home">Inicio</a></li>
-            <li><a href="#about">Quiénes Somos</a></li>
-            <li><a href="#products">Productos</a></li>
-            <li><a href="#courses">Cursos</a></li>
-            <li><a href="#contact">Contacto</a></li>
-        </ul>
-        </nav>
+        <div class="container nav-wrap">
+            <div class="brand">
+                <img src="FOTO DE PERFIL.jpg" alt="Papeli Studio logo" class="logo"/>
+                <div class="brand-text">
+                    <span class="brand-name">Papeli<span class="brand-accent">Studio</span></span>
+                    <small class="brand-sub">Papelería Creativa y Corporativa</small>
+                </div>
+            </div>
+            <nav class="nav" id="nav">
+                <ul>
+                    <li><a href="#home">Inicio</a></li>
+                    <li><a href="#about">Quiénes Somos</a></li>
+                    <li><a href="#products">Productos</a></li>
+                    <li><a href="#courses">Cursos</a></li>
+                    <li><a href="#contact">Contacto</a></li>
+                </ul>
+            </nav>
 
-        <div class="nav-actions">
-        <a class="btn login" href="Login.html">Inicia sesión</a>
-        <button class="hamburger" id="hamburger" aria-label="Abrir menú">
-            <span></span><span></span><span></span>
-        </button>
+            <div class="nav-actions">
+                <a class="btn login" href="Login.html">Inicia sesión</a>
+                <button class="hamburger" id="hamburger" aria-label="Abrir menú">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
-    </div>
     </header>
+
+    <!-- FORMULARIO DE REGISTRO -->
     <section class="section" id="register">
-    <div class="container">
-        <h2 class="section-title">Registro de Usuario</h2>
-        <p style="color: var(--muted); margin-bottom: 20px;">
-            Crea tu cuenta para acceder a nuestras promociones y cursos exclusivos ✨
-        </p>
+        <div class="container">
+            <h2 class="section-title">Registro de Usuario</h2>
+            <p style="color: var(--muted); margin-bottom: 20px;">
+                Crea tu cuenta para acceder a nuestras promociones y cursos exclusivos ✨
+            </p>
 
-        <form class="register-form" action="#" method="post">
-            <div class="form-group">
-                <label for="nombres">Nombres</label>
-                <input type="text" id="nombres" name="nombres" placeholder="Ej: Ana María" required>
-            </div>
-
-            <div class="form-group">
-                <label for="apellidos">Apellidos</label>
-                <input type="text" id="apellidos" name="apellidos" placeholder="Ej: González Pérez" required>
-            </div>
-
-            <div class="form-group">
-                <label for="rut">RUT</label>
-                <input type="text" id="rut" name="rut" placeholder="Ej: 12.345.678-9" required>
-            </div>
-
-            <div class="form-group">
-                <label for="correo">Correo electrónico</label>
-                <input type="email" id="correo" name="correo" placeholder="Ej: nombre@correo.com" required>
-            </div>
-
-            <div class="form-group">
-                <label for="telefono">Teléfono</label>
-                <input type="tel" id="telefono" name="telefono" placeholder="Ej: +56 9 1234 5678" required>
-            </div>
+            <form class="register-form" action="registrar_usuario.php" method="post">
+                <div class="form-group">
+                    <label for="nombres">Nombres</label>
+                    <input type="text" id="nombres" name="nombres" placeholder="Ej: Ana María" required>
+                </div>
+                <div class="form-group">
+                    <label for="apellidos">Apellidos</label>
+                    <input type="text" id="apellidos" name="apellidos" placeholder="Ej: González Pérez" required>
+                </div>
+                <div class="form-group">
+                    <label for="rut">RUT</label>
+                    <input type="text" id="rut" name="rut" placeholder="Ej: 12.345.678-9" required>
+                </div>
+                <div class="form-group">
+                    <label for="correo">Correo electrónico</label>
+                    <input type="email" id="correo" name="correo" placeholder="Ej: nombre@correo.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="telefono">Teléfono</label>
+                    <input type="tel" id="telefono" name="telefono" placeholder="Ej: +56 9 1234 5678" required>
+                </div>
+                <div class="form-group">
+                    <label for="contrasena">Contraseña</label>
+                    <input type="password" id="contrasena" name="contrasena" placeholder="Crea una contraseña segura" required minlength="6">
+                </div>
 
                 <button type="submit" class="btn primary">Registrarme</button>
             </form>
         </div>
     </section>
+
+    <script src="Utility.js"></script>
 </body>
 </html>
