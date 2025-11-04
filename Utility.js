@@ -1,20 +1,19 @@
-    // === VALIDACIÓN Y FORMATEO DE RUT CHILENO (con mensajes visuales) ===
+
     document.addEventListener("DOMContentLoaded", () => {
     const rutInput = document.getElementById("rut");
     const form = document.querySelector(".register-form");
 
-    if (!rutInput || !form) return; // Si no hay formulario, no hace nada
+    if (!rutInput || !form) return;
 
     console.log("🧩 Validación de RUT activa con mensajes visuales");
 
-    // Crear el mensaje dinámico bajo el campo
     const msg = document.createElement("small");
     msg.style.display = "block";
     msg.style.marginTop = "4px";
     msg.style.fontSize = "0.9em";
     form.querySelector(".form-group:nth-child(3)").appendChild(msg);
 
-    // Función para validar el RUT chileno
+
     function validarRut(rut) {
         rut = rut.replace(/\./g, "").replace(/-/g, "").trim();
         if (!/^[0-9]+[0-9kK]{1}$/.test(rut)) return false;
@@ -37,7 +36,7 @@
         return dv === dvFinal;
     }
 
-    // Función para formatear el RUT mientras se escribe
+
     function formatearRut(valor) {
         valor = valor.replace(/\./g, "").replace(/-/g, "");
         if (valor.length <= 1) return valor;
@@ -46,7 +45,7 @@
         return cuerpo.replace(/\B(?=(\d{3})+(?!\d))/g, ".") + "-" + dv;
     }
 
-    // Formatear mientras el usuario escribe
+
     rutInput.addEventListener("input", function () {
         const valorSinFormato = this.value.replace(/\./g, "").replace(/-/g, "");
         this.value = formatearRut(valorSinFormato);
@@ -54,7 +53,6 @@
         this.style.borderColor = "";
     });
 
-    // Validar al perder el foco (cuando el usuario deja el campo)
     rutInput.addEventListener("blur", function () {
         const valor = this.value.trim();
         if (valor === "") {
@@ -74,7 +72,7 @@
         }
     });
 
-    // Validar al enviar el formulario
+
     form.addEventListener("submit", function (e) {
         const rutValor = rutInput.value.trim();
         if (!validarRut(rutValor)) {

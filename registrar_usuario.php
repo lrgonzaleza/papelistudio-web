@@ -23,11 +23,9 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $fono      = trim($_POST["telefono"]);
     $contrasena = $_POST["contrasena"];
 
-    // Encriptar la contraseña
+
     $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
 
-    // Llamar al procedimiento almacenado (actualízalo para incluir la contraseña)
-    // Debe tener este formato: usp_RegistrarUsuario(@Nombres, @Apellidos, @Rut, @Email, @Fono, @Contrasena)
     $sql = "{CALL usp_RegistrarUsuario(?, ?, ?, ?, ?, ?)}";
     $params = array($nombres, $apellidos, $rut, $email, $fono, $contrasena_hash);
 
