@@ -17,7 +17,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $email = trim($_POST["correo"]);
     $contrasena = $_POST["contrasena"];
 
-    // Llamamos al procedimiento almacenado
     $sql = "{CALL usp_LoginUsuario(?)}";
     $params = array($email);
 
@@ -29,7 +28,6 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $hashGuardado = $row["Usu_Contrasena"];
         $nombre = $row["Usu_Nombres"];
 
-        // Verificar la contraseña
         if (password_verify($contrasena, $hashGuardado)) {
             // Iniciar sesión
             session_start();

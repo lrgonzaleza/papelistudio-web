@@ -13,9 +13,8 @@ if (!$conn) {
     die("❌ Error de conexión: " . print_r(sqlsrv_errors(), true));
 }
 
-if ($_SERVER["REQUEST_METHOD"] == "POST") {
-
-    // Capturar datos del formulario
+if ($_SERVER["REQUEST_METHOD"] == "POST") 
+    {
     $nombres   = trim($_POST["nombres"]);
     $apellidos = trim($_POST["apellidos"]);
     $rut       = trim($_POST["rut"]);
@@ -31,7 +30,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt = sqlsrv_query($conn, $sql, $params);
 
-    if ($stmt) {
+    if ($stmt) 
+    {
         echo "<script>alert('✅ Usuario registrado correctamente'); window.location.href='Login.html';</script>";
     } else {
         echo "<script>alert('❌ Error al registrar usuario');</script>";
