@@ -37,7 +37,7 @@ session_start();
           <li><a href="#home">Inicio</a></li>
           <li><a href="#about">Quiénes Somos</a></li>
           <li><a href="#products">Productos</a></li>
-          <li><a href="#courses">Cursos</a></li>
+          <li><a href="cursos.php">Cursos</a></li>
           <li><a href="#contact">Contacto</a></li>
         </ul>
       </nav>
@@ -57,7 +57,6 @@ session_start();
     </div>
   </header>
 
-  <!-- HERO -->
   <section id="home" class="hero">
     <div class="container hero-inner">
       <h1 class="hero-title">¿Qué vamos a crear hoy?</h1>
@@ -70,7 +69,6 @@ session_start();
     </div>
   </section>
 
-  <!-- CARRUSEL (Productos destacados) -->
   <section id="products" class="section section-products">
     <div class="container">
       <h2 class="section-title">Productos Destacados</h2>
@@ -112,7 +110,6 @@ session_start();
             </figure>
           </div>
 
-          <!-- Agrega más slides según necesites -->
         </div>
 
         <!-- controles -->
@@ -123,7 +120,6 @@ session_start();
     </div>
   </section>
 
-  <!-- QUIÉNES SOMOS -->
   <section id="about" class="section section-about">
     <div class="container about-grid">
       <div class="about-text">
@@ -146,7 +142,6 @@ session_start();
     </div>
   </section>
 
-  <!-- CURSOS (Placeholder) -->
   <section id="courses" class="section section-courses">
     <div class="container">
       <h2 class="section-title">Cursos</h2>
@@ -154,7 +149,6 @@ session_start();
     </div>
   </section>
 
-  <!-- CONTACTO -->
   <section id="contact" class="section section-contact">
     <div class="container contact-grid">
       <div>
@@ -192,7 +186,6 @@ session_start();
     </div>
   </section>
 
-  <!-- FOOTER -->
   <footer class="footer">
     <div class="container footer-grid">
       <div>
@@ -216,15 +209,12 @@ session_start();
     </div>
   </footer>
 
-  <!-- Botón flotante WhatsApp -->
   <a href="https://wa.me/56965929120" class="whatsapp-float" target="_blank" rel="noopener" aria-label="Contactar por WhatsApp">
     <i class="fab fa-whatsapp"></i>
   </a>
 
-  <!-- Swiper JS -->
   <script src="https://unpkg.com/swiper@9/swiper-bundle.min.js"></script>
 
-  <!-- Your script -->
   <script src="papeli.js"></script>
 </body>
 </html>
