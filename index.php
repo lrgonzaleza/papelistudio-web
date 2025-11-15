@@ -44,12 +44,25 @@ session_start();
 
       <div class="nav-actions">
         <?php if (isset($_SESSION['usuario'])): ?>
-          <form action="logout.php" method="post" style="display:inline;">
-            <button type="submit" class="btn login">Cerrar sesión</button>
-          </form>
-        <?php else: ?>
-          <a class="btn login" href="Login.html">Inicia sesión</a>
+        <div class="user-menu">
+        <button class="btn login user-btn">
+          <?php echo $_SESSION['usuario']; ?> <i class="fa fa-caret-down"></i>
+        </button>
+
+        <div class="user-dropdown">
+        <?php if ($_SESSION["rol"] == 1): ?>
+            <a href="upgrade.php">✨ Hazte VIP</a>
         <?php endif; ?>
+
+        <form action="logout.php" method="post">
+            <button type="submit" class="logout-btn">Cerrar sesión</button>
+        </form>
+        </div>
+        </div>
+        <?php else: ?>
+        <a class="btn login" href="Login.html">Inicia sesión</a>
+        <?php endif; ?>
+
         <button class="hamburger" id="hamburger" aria-label="Abrir menú">
           <span></span><span></span><span></span>
         </button>
