@@ -54,10 +54,20 @@ CREATE PROCEDURE usp_LoginUsuario
 AS
 BEGIN
     SET NOCOUNT ON;
-    SELECT Usu_Nombres, Usu_Contrasena
+    SELECT Usu_Nombres, Usu_Contrasena, Usu_Rol_Id
     FROM Usu_Usuario
     WHERE Usu_Email = @Email;
 END;
 
-select * from Usu_Usuario
+Create procedure usp_Vip
+	@Email VARCHAR (150)
+As
+Begin
+	set nocount on;
+	update Usu_Usuario
+	set
+	Usu_Rol_Id=2
+	where Usu_Email=@Email
+end
 
+select * from Usu_Usuario

@@ -442,14 +442,16 @@ body{
 }
 
 .user-btn {
-    background: #ff6fa3;
-    border: none;
+    background: #ff6fa3 !important;
+    color: white !important;
+    border: none !important;
     padding: 10px 15px;
     border-radius: 8px;
     cursor: pointer;
-    color: white;
     font-weight: 600;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.15);
 }
+
 
 .user-dropdown {
     position: absolute;
@@ -471,13 +473,14 @@ body{
     text-align: left;
     border: none;
     background: none;
-    color: #333;
     cursor: pointer;
+    color: #444;
+    font-weight: 500;
 }
 
 .user-dropdown a:hover,
 .user-dropdown button:hover {
-    background: #ffeff6;
+    background: #ffe0ef;
 }
 
 .user-menu:hover .user-dropdown {
