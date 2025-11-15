@@ -2,7 +2,7 @@
 $serverName = "ALEJANDRO\\SQLEXPRESS";
 $connectionInfo = array(
     "Database" => "PapeliStudio",
-    "UID" => "",  // Autenticación de Windows
+    "UID" => "",
     "PWD" => ""
 );
 
@@ -27,12 +27,14 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
         $hashGuardado = $row["Usu_Contrasena"];
         $nombre = $row["Usu_Nombres"];
+        $rol=$row["Usu_Rol_Id"];
 
         if (password_verify($contrasena, $hashGuardado)) {
             // Iniciar sesión
             session_start();
             $_SESSION["usuario"] = $nombre;
             $_SESSION["email"] = $email;
+            $_SESSION["rol"] = $rol;
 
             echo "<script>alert('✅ Bienvenido, $nombre'); window.location.href='index.php';</script>";
         } else {
