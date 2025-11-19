@@ -1,9 +1,8 @@
 <?php
-// Datos de conexión
 $serverName = "ALEJANDRO\\SQLEXPRESS";
 $connectionInfo = array(
     "Database" => "PapeliStudio",
-    "UID" => "",  // Autenticación de Windows
+    "UID" => "",
     "PWD" => ""
 );
 

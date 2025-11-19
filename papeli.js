@@ -1,6 +1,4 @@
-// Archivo: script.js
 
-// NAV hamburger toggle
 const hamburger = document.getElementById('hamburger');
 const nav = document.getElementById('nav');
 
@@ -9,14 +7,12 @@ hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
 });
 
-// Set current year in footer
 const yearEl = document.getElementById('year');
 if (yearEl) {
   yearEl.textContent = new Date().getFullYear();
 }
 
 
-// Inicializar Swiper (carrusel moderno y táctil)
 const swiper = new Swiper('.mySwiper', {
   // Parameters
   speed: 700,
@@ -26,7 +22,6 @@ const swiper = new Swiper('.mySwiper', {
   centeredSlides: false,
   grabCursor: true,
 
-  // Pagination and navigation
   pagination: {
     el: '.swiper-pagination',
     clickable: true,
@@ -36,7 +31,6 @@ const swiper = new Swiper('.mySwiper', {
     prevEl: '.swiper-button-prev',
   },
 
-  // Responsive breakpoints
   breakpoints: {
     640: {
       slidesPerView: 1.2,
@@ -52,16 +46,12 @@ const swiper = new Swiper('.mySwiper', {
     }
   },
 
-  // Effect optional (fade/slide/creative)
-  effect: 'slide',
-  // Autoplay (comment out if you prefer no autoplay)
   autoplay: {
     delay: 4200,
     disableOnInteraction: false,
   }
 });
 
-// Smooth scroll for anchor links
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function(e){
     const target = this.getAttribute('href');
