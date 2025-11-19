@@ -17,11 +17,9 @@ session_start();
   <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-  <!-- Your styles -->
   <link rel="stylesheet" href="papeli.css" />
 </head>
 <body>
-  <!-- NAV -->
   <header class="header">
     <div class="container nav-wrap">
       <div class="brand">
@@ -86,10 +84,8 @@ session_start();
     <div class="container">
       <h2 class="section-title">Productos Destacados</h2>
 
-      <!-- Swiper -->
       <div class="swiper mySwiper">
         <div class="swiper-wrapper">
-          <!-- Repite cada slide con tu contenido -->
           <div class="swiper-slide">
             <figure class="card">
               <img src="cake topper 1.png" alt="Producto 1">
