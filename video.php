@@ -6,7 +6,6 @@ http_response_code(403);
 exit('Acceso denegado');
 }
 
-// Valida qué video se solicita
 $video = basename($_GET['v']);
 $file = __DIR__ . "/videos/" . $video;
 

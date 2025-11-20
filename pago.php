@@ -6,14 +6,8 @@ if (!isset($_SESSION["usuario"])) {
     exit();
 }
 
-$serverName = "ALEJANDRO\\SQLEXPRESS";
-$connectionInfo = array(
-    "Database" => "PapeliStudio",
-    "UID" => "",
-    "PWD" => ""
-);
+require_once "conexion.php";
 
-$conn = sqlsrv_connect($serverName, $connectionInfo);
 $params = array($_SESSION["email"]);
 $sql = "{CALL usp_Vip(?)}";
 $stmt = sqlsrv_query($conn, $sql, $params);

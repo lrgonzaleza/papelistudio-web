@@ -1,11 +1,9 @@
 <?php
 session_start();
     if (!isset($_SESSION["usuario"])) {
-        // No está logueado
         header("Location: Login.html");
         exit();
     }
-
     if ($_SESSION["rol"] != 2) 
         {
         echo "<script>
