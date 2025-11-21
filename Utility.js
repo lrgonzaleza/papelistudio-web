@@ -14,29 +14,39 @@
     form.querySelector(".form-group:nth-child(3)").appendChild(msg);
 
 
-    function validarRut(rut) {
-        rut = rut.replace(/\./g, "").replace(/-/g, "").trim();
-        if (!/^[0-9]+[0-9kK]{1}$/.test(rut)) return false;
+    function validarRut(rut) 
+    {
+        if (!rut) return false;
+
+        rut = rut.replace(/\./g, "").replace(/-/g, "").trim().toUpperCase();
+        if (rut.length < 8 || rut.length > 10) return false;
+
+        if (!/^[0-9]+[0-9K]$/.test(rut)) return false;
 
         const cuerpo = rut.slice(0, -1);
-        const dv = rut.slice(-1).toUpperCase();
-        let suma = 0, multiplo = 2;
+        const dv = rut.slice(-1);
+        const num = parseInt(cuerpo);
 
-        for (let i = cuerpo.length - 1; i >= 0; i--) {
-        suma += multiplo * parseInt(cuerpo.charAt(i));
-        multiplo = multiplo < 7 ? multiplo + 1 : 2;
+        if (num < 1000000 || num > 99999999) return false;
+
+        if (/^(\d)\1+$/.test(cuerpo)) return false;
+
+        let suma = 0, multiplicador = 2;
+
+        for (let i = cuerpo.length - 1; i >= 0; i--) 
+        {
+            suma += multiplicador * parseInt(cuerpo[i]);
+            multiplicador = multiplicador === 7 ? 2 : multiplicador + 1;
         }
 
-        const dvEsperado = 11 - (suma % 11);
-        const dvFinal =
-        dvEsperado === 11 ? "0" :
-        dvEsperado === 10 ? "K" :
-        dvEsperado.toString();
+        const resto = 11 - (suma % 11);
+        const dvEsperado =
+            resto === 11 ? "0" :
+            resto === 10 ? "K" :
+            resto.toString();
 
-        return dv === dvFinal;
+        return dv === dvEsperado;
     }
-
-
     function formatearRut(valor) {
         valor = valor.replace(/\./g, "").replace(/-/g, "");
         if (valor.length <= 1) return valor;
