@@ -155,18 +155,6 @@ IF OBJECT_ID('usp_LoginUsuario', 'P') IS NOT NULL
     DROP PROCEDURE usp_LoginUsuario;
 GO
 
-CREATE PROCEDURE usp_LoginUsuario
-    @Email VARCHAR(150)
-AS
-BEGIN
-    SET NOCOUNT ON;
-    SELECT Usu_Nombres, Usu_Contrasena, Usu_Rol_Id
-    FROM Usu_Usuario
-    -- Usamos TRIM() para asegurar que la búsqueda sea correcta
-    WHERE TRIM(Usu_Email) = TRIM(@Email); 
-END;
-GO
-
 
 
 
