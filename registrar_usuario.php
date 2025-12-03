@@ -9,15 +9,10 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
     $email     = trim($_POST["correo"]);
     $fono      = trim($_POST["telefono"]);
     $contrasena = $_POST["contrasena"];
-
-
     $contrasena_hash = password_hash($contrasena, PASSWORD_DEFAULT);
-
     $sql = "{CALL usp_RegistrarUsuario(?, ?, ?, ?, ?, ?)}";
     $params = array($nombres, $apellidos, $rut, $email, $fono, $contrasena_hash);
-
     $stmt = sqlsrv_query($conn, $sql, $params);
-
     if ($stmt) 
     {
         echo "<script>alert('✅ Usuario registrado correctamente'); window.location.href='Login.html';</script>";
@@ -26,6 +21,5 @@ if ($_SERVER["REQUEST_METHOD"] == "POST")
         die(print_r(sqlsrv_errors(), true));
     }
 }
-
 sqlsrv_close($conn);
 ?>

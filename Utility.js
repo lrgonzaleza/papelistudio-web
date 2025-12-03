@@ -50,6 +50,11 @@
             resto === 11 ? "0" :
             resto === 10 ? "K" :
             resto.toString();
+        const resto = 11 - (suma % 11);
+        const dvEsperado =
+            resto === 11 ? "0" :
+            resto === 10 ? "K" :
+            resto.toString();
 
         return dv === dvEsperado;
     } 
