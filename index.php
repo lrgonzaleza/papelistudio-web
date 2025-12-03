@@ -7,17 +7,51 @@ session_start();
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Papeli Studio</title>
   <meta name="description" content="Papeli Studio — Papelería creativa y corporativa. Diseños, sublimación y regalos personalizados." />
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&family=Poppins:wght@300;400;600;700&display=swap" rel="stylesheet">
 
-  <!-- Swiper CSS -->
   <link rel="stylesheet" href="https://unpkg.com/swiper@9/swiper-bundle.min.css"/>
 
-  <!-- Font Awesome for icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="papeli.css" />
+  <!-- Agregar los estilos del botón de pedido -->
+  <style>
+    .btn-pedido {
+        display: inline-block;
+        margin-top: 15px;
+        padding: 12px 24px;
+        background: linear-gradient(135deg, #ff6b9d 0%, #c44569 100%);
+        color: white;
+        text-decoration: none;
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 0.95em;
+        transition: all 0.3s ease;
+        border: none;
+        cursor: pointer;
+        text-align: center;
+    }
+
+    .btn-pedido:hover {
+        transform: translateY(-3px);
+        box-shadow: 0 6px 20px rgba(255, 107, 157, 0.4);
+    }
+
+    .btn-pedido i {
+        margin-right: 8px;
+    }
+    
+    .card figcaption {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+    }
+    
+    .card .price {
+        margin: 10px 0;
+    }
+  </style>
 </head>
 <body>
   <header class="header">
@@ -93,6 +127,10 @@ session_start();
                 <h3>Cake Topper</h3>
                 <p>Diseñamos el cake topper de tu preferencia.</p>
                 <div class="price">Desde CLP $5000</div>
+                <!-- Botón de pedido para el producto con PRO_ID = 1 -->
+                <a href="pedido.php?id=1" class="btn-pedido">
+                  <i class="fas fa-shopping-cart"></i> Hacer Pedido
+                </a>
               </figcaption>
             </figure>
           </div>
@@ -104,6 +142,10 @@ session_start();
                 <h3>Tazas Sublimadas</h3>
                 <p>Diseños personalizables.</p>
                 <div class="price">CLP $6.000</div>
+                <!-- Botón de pedido para el producto con PRO_ID = 2 -->
+                <a href="pedido.php?id=2" class="btn-pedido">
+                  <i class="fas fa-shopping-cart"></i> Hacer Pedido
+                </a>
               </figcaption>
             </figure>
           </div>
@@ -115,6 +157,10 @@ session_start();
                 <h3>Invitaciones</h3>
                 <p>Diseño y producción</p>
                 <div class="price">Desde CLP $2.500</div>
+                <!-- Botón de pedido para el producto con PRO_ID = 3 -->
+                <a href="pedido.php?id=3" class="btn-pedido">
+                  <i class="fas fa-shopping-cart"></i> Hacer Pedido
+                </a>
               </figcaption>
             </figure>
           </div>
@@ -226,3 +272,5 @@ session_start();
   <script src="papeli.js"></script>
 </body>
 </html>
+
+
